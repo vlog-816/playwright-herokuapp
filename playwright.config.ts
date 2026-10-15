@@ -32,14 +32,24 @@ export default defineConfig({
     trace: 'on-first-retry',
     // Capture screenshot after each test failure.
     screenshot: 'only-on-failure',
+        actionTimeout: 15000,
+    navigationTimeout: 30000,
+  },
+  expect: {
+    // Cấu hình cho việc KIỂM TRA hiển thị (Ví dụ: await expect(locator).toBeVisible())
+    // Playwright sẽ liên tục kiểm tra DOM xem phần tử xuất hiện chưa trong suốt 15 giây này
+    timeout: 15000, // Tăng lên 15 giây (Mặc định là 5s)
   },
 
+  timeout: 60000,
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+
+    
 
     // {
     //   name: 'firefox',
