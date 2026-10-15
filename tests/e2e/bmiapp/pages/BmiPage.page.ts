@@ -25,7 +25,7 @@ export class BmiPage {
     }
 
     async goto() {
-        await this.page.goto('https://www.calculator.net/bmi-calculator.html');
+        await this.page.goto('https://www.calculator.net/bmi-calculator.html', { waitUntil: 'domcontentloaded' });
     }
 
     async resetForm() {
