@@ -1,1 +1,0 @@
-File mẫu dùng cho bài 11: upload file bằng Selenium.
