@@ -33,12 +33,15 @@ export class BmiPage {
     }
 
     async fillFormAndCalculate(age: string, gender: string, height: number, weight: number) {
+        await this.ageInput.scrollIntoViewIfNeeded();
         await this.ageInput.fill(age);
         if (gender === 'male') {
             await this.maleBtn.check();
         } else {
             await this.femaleBtn.check();
         }
+        
+        await this.heightInput.scrollIntoViewIfNeeded();
         await this.heightInput.fill(height.toString());
         await this.weightInput.fill(weight.toString());
         await this.calculateBtn.click();

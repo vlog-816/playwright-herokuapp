@@ -32,7 +32,8 @@ export default defineConfig({
     trace: 'on-first-retry',
     // Capture screenshot after each test failure.
     screenshot: 'only-on-failure',
-        actionTimeout: 15000,
+    video: 'retain-on-failure',
+    actionTimeout: 15000,
     navigationTimeout: 30000,
   },
   expect: {
@@ -49,7 +50,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    
+
 
     // {
     //   name: 'firefox',
