@@ -1,0 +1,58 @@
+[
+  {
+    "age": "32",
+    "gender": "male",
+    "height": 172,
+    "weight": 41,
+    "category": "(Severe thinness)"
+  },
+  {
+    "age": "32",
+    "gender": "female",
+    "height": 162,
+    "weight": 43,
+    "category": "(Moderate thinness)"
+  },
+  {
+    "age": "32",
+    "gender": "male",
+    "height": 152,
+    "weight": 41,
+    "category": "(Mild thinness)"
+  },
+  {
+    "age": "32",
+    "gender": "female",
+    "height": 152,
+    "weight": 43,
+    "category": "(Normal)"
+  },
+  {
+    "age": "32",
+    "gender": "male",
+    "height": 152,
+    "weight": 65,
+    "category": "(Overweight)"
+  },
+  {
+    "age": "32",
+    "gender": "female",
+    "height": 152,
+    "weight": 75,
+    "category": "(Obese Class I)"
+  },
+  {
+    "age": "32",
+    "gender": "male",
+    "height": 152,
+    "weight": 85,
+    "category": "(Obese Class II)"
+  },
+  {
+    "age": "32",
+    "gender": "female",
+    "height": 152,
+    "weight": 95,
+    "category": "(Obese Class III)"
+  }
+]
