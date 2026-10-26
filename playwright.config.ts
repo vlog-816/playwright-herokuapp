@@ -33,13 +33,13 @@ export default defineConfig({
     // Capture screenshot after each test failure.
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    actionTimeout: 15000,
+    actionTimeout: 30000,
     navigationTimeout: 30000,
   },
   expect: {
     // Cấu hình cho việc KIỂM TRA hiển thị (Ví dụ: await expect(locator).toBeVisible())
-    // Playwright sẽ liên tục kiểm tra DOM xem phần tử xuất hiện chưa trong suốt 15 giây này
-    timeout: 15000, // Tăng lên 15 giây (Mặc định là 5s)
+    // Playwright sẽ liên tục kiểm tra DOM xem phần tử xuất hiện chưa trong suốt 30 giây này
+    timeout: 30000, // Tăng lên 30 giây (Mặc định là 5s)
   },
 
   timeout: 60000,

@@ -1,3 +1,4 @@
+import { request } from 'node:http';
 import { test, expect, request } from '@playwright/test'
 import * as z from 'zod'
 
@@ -97,7 +98,7 @@ test('UPDATE booking', async ({ request }) => {
             }
         })
     */
-   
+
     let bookingDetails = bookingByIdBody;
     bookingDetails.firstname = "Vandy";
     bookingDetails.totalprice = 8888;
@@ -113,12 +114,30 @@ test('UPDATE booking', async ({ request }) => {
         data: bookingDetails
     })
 
-
     expect(updateBookingResponse.ok()).toBe(true);
 
     const updateBookingBody = await updateBookingResponse.json();
-
     console.log(`After update: `, updateBookingBody);
+})
 
+test('DELETE booking', async ({ request }) => {
+    const authResponse = await request.post('https://restful-booker.herokuapp.com/auth', {
+        headers: { 'Content-Type': 'application/json' },
+        data: {
+            "username": "admin",
+            "password": "password123"
+        }
+    })
+    expect(authResponse.ok()).toBe(true);
+
+    const authResponseBody = await authResponse.json();
+    const token = authResponseBody.token;
+
+    const deleteResponse = await request.delete('https://restful-booker.herokuapp.com/booking/1', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Cookie': `token=${token}`
+        },
+    })
 
 })
