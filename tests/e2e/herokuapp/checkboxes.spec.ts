@@ -1,25 +1,21 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/haroku.fixture';
 
 test.describe('Happy path', () => {
-    test('Checkbox is checked successfully', async ({ page }) => {
+    test('Checkbox is checked successfully', async ({ checkboxPage }) => {
+        await checkboxPage.goto();
+        await checkboxPage.checkCheckbox(1);
+        await checkboxPage.checkCheckbox(2);
 
-        await page.goto('https://the-internet.herokuapp.com/checkboxes');
-        await page.getByRole('checkbox').first().check();
-        await page.getByRole('checkbox').last().check();
-
-        await expect(page.getByRole('checkbox').first()).toBeChecked;
-        await expect(page.getByRole('checkbox').last()).toBeChecked;
-        await page.pause();
+        await expect(checkboxPage.checkbox1).toBeChecked();
+        await expect(checkboxPage.checkbox2).toBeChecked();
     })
 
-    test('Checkbox is unchecked successfully', async ({ page }) => {
+    test('Checkbox is unchecked successfully', async ({ checkboxPage }) => {
+        await checkboxPage.goto();
+        await checkboxPage.uncheckCheckbox(1);
+        await checkboxPage.uncheckCheckbox(2);
 
-        await page.goto('https://the-internet.herokuapp.com/checkboxes');
-        await page.getByRole('checkbox').nth(0).uncheck();``
-        await page.getByRole('checkbox').nth(1).uncheck();``
-
-        await expect(page.getByRole('checkbox').nth(0)).not.toBeChecked;
-        await expect(page.getByRole('checkbox').nth(1)).not.toBeChecked;
-        await page.pause()
+        await expect(checkboxPage.checkbox1).not.toBeChecked();
+        await expect(checkboxPage.checkbox2).not.toBeChecked();
     })
 })
