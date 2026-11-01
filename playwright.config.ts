@@ -35,6 +35,7 @@ export default defineConfig({
     video: 'retain-on-failure',
     actionTimeout: 30000,
     navigationTimeout: 30000,
+    headless: false,
   },
   expect: {
     // Cấu hình cho việc KIỂM TRA hiển thị (Ví dụ: await expect(locator).toBeVisible())
